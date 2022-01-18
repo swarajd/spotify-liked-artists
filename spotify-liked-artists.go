@@ -54,13 +54,7 @@ type Artist struct {
 func main() {
 	loadEnvFile("secrets.env")
 
-	// client_id := os.Getenv("CLIENT_ID")
-	// client_secret := os.Getenv("CLIENT_SECRET")
-
-	// token := getToken(client_id, client_secret)
 	token := os.Getenv("TOKEN")
-
-	// fmt.Println(token)
 
 	tracks := getTracks(token)
 
@@ -125,9 +119,6 @@ func getTracks(token string) []Song {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	// body_string := string(body)
-	// fmt.Println(body_string)
 
 	var response_map Response
 
